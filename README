@@ -3,24 +3,24 @@
 This project addresses this very problem.
 
 # How to use?
-0. Download https://github.com/Gopinathp/sl4j_android/blob/master/bin/slf4j-android-logging-corrected.jar (or build your own jar from the sources provided in this project) and place the jar file inside the libs folder in your Android project.
-1. On Applicaiton class, set the loglevel in a static block as shown below.
-*  static{
-*      if(BuildConfig.DEBUG) {
-*        	AndroidLoggerFactory.setLogLevel(Log.VERBOSE);
-*        } else {
-*      		AndroidLoggerFactory.setLogLevel(Log.ERROR);
-*      	}
-*    }
+* Download https://github.com/Gopinathp/sl4j_android/blob/master/bin/slf4j-android-logging-corrected.jar (or build your own jar from the sources provided in this project) and place the jar file inside the libs folder in your Android project.
+* On Applicaiton class, set the loglevel in a static block as shown below.
+  `static{
+      if(BuildConfig.DEBUG) {
+        	AndroidLoggerFactory.setLogLevel(Log.VERBOSE);
+        } else {
+      		AndroidLoggerFactory.setLogLevel(Log.ERROR);
+      	}
+    }`
 
-2. Create the logger object whereever you want by the standard logger way.
-*  Logger sLogger = LoggerFactory.getLogger(this.class.getSimpleName());
+* Create the logger object whereever you want by the standard logger way.
+  `Logger sLogger = LoggerFactory.getLogger(this.class.getSimpleName());`
 
 
-3. Add log statements in the standard log4j style. 
-*  sLogger.debug("This is a debug message");
-*  sLogger.verbose("this is a verbose message");
-*  sLogger.error("Oh... This is an exception");
-*  sLogger.warn("This is a warning");
+* Add log statements in the standard log4j style. 
+  `sLogger.debug("This is a debug message");`
+  `sLogger.verbose("this is a verbose message");`
+  `sLogger.error("Oh... This is an exception");`
+  `sLogger.warn("This is a warning");`
 
 NOTE: This internally uses the android.util.Log's v,d,i,w,e methods() to do the actual logging.
