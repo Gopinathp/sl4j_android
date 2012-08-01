@@ -11,7 +11,7 @@ This project addresses this very problem.
             } else {
           		AndroidLoggerFactory.setLogLevel(Log.ERROR);
           	}
-        }
+      }
 
 * Create the logger object whereever you want by the standard logger way.
   `Logger sLogger = LoggerFactory.getLogger(this.class.getSimpleName());`
